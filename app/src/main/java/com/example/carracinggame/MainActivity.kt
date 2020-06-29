@@ -44,13 +44,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun runGame(cars: MutableList<Car>) {
+        val manager = supportFragmentManager
+        val transaction = manager.beginTransaction()
+        //transaction.replace(R.id.mainPage, R.layout.game_activity)
+        transaction.commit()
+
         renderCars(cars)
     }
 
     private fun renderCars(cars: MutableList<Car>){
-        
+
     }
 }
+
 
 class Car() {
     private var x: Int = 0
