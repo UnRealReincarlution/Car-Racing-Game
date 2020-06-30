@@ -1,27 +1,30 @@
 package com.example.carracinggame
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.renderscript.ScriptGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import org.w3c.dom.Text
-import java.util.*
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.FragmentManager
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        val fm: FragmentManager = supportFragmentManager
+        fm.beginTransaction()
+            .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+            .hide(game_fragment)
+            .commit()
+
         val button = findViewById<Button>(R.id.start_button)
         val car_count = findViewById<EditText>(R.id.number_of_cars).text
         val car_counter = findViewById<EditText>(R.id.number_of_cars)
-        val text_to_change = findViewById<TextView>(R.id.changeMe)
         val tooltip_text = findViewById<TextView>(R.id.car_count_tooltip)
 
         button.setOnClickListener {
-            text_to_change.text = "$car_count Cars"
             car_counter.setVisibility(EditText.GONE)
             button.setVisibility(Button.GONE)
             tooltip_text.setVisibility(TextView.GONE)
@@ -44,10 +47,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun runGame(cars: MutableList<Car>) {
-        val manager = supportFragmentManager
-        val transaction = manager.beginTransaction()
-        //transaction.replace(R.id.mainPage, R.layout.game_activity)
-        transaction.commit()
+        val fm: FragmentManager = supportFragmentManager
+        fm.beginTransaction()
+            .setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out)
+            .show(game_fragment)
+            .hide(menu_fragment)
+            .commit()
 
         renderCars(cars)
     }
