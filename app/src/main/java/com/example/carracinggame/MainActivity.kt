@@ -1,5 +1,6 @@
 package com.example.carracinggame
 
+import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -53,6 +54,8 @@ class MainActivity : AppCompatActivity() {
             .show(game_fragment)
             .hide(menu_fragment)
             .commit()
+
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE
 
         renderCars(cars)
     }
