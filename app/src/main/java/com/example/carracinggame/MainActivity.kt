@@ -4,10 +4,13 @@ import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.FragmentManager
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_menu.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -61,7 +64,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun renderCars(cars: MutableList<Car>){
+        val constraintLayout = findViewById(R.id.game_fragment) as ConstraintLayout
 
+        //for(x in 0 until cars.size){
+            val car = ImageView(this)
+            car.setImageResource(R.drawable.ic_launcher_background)
+            constraintLayout.addView(car)
+        //}
     }
 }
 
