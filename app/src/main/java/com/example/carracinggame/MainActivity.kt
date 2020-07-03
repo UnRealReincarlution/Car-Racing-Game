@@ -64,12 +64,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun renderCars(cars: MutableList<Car>){
-        val constraintLayout = findViewById(R.id.game_fragment) as ConstraintLayout
+        //val constraintLayout = findViewById(R.id.game_fragment) as ConstraintLayout
 
         //for(x in 0 until cars.size){
-            val car = ImageView(this)
-            car.setImageResource(R.drawable.ic_launcher_background)
-            constraintLayout.addView(car)
+            //val car = ImageView(this)
+            //car.setImageResource(R.drawable.ic_launcher_background)
+            //constraintLayout.addView(car)
         //}
     }
 }
