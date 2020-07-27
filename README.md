@@ -15,17 +15,17 @@ Android Device Running Android 4.0 or later
 ```
 
 ```
-5MB of avaliable disk space
+5MB of available disk space
 ```
 
 ## How to use
 
-Simply enter in the ammount of cars you wish to race and click go!
+Simply enter in the amount of cars you wish to race and click go!
 It will begin the race and switch the phone to landscape.
 
 ## Deployment
 
-No deployment neccesary!
+No deployment necessary!
 
 ## Built With
 
@@ -46,4 +46,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 * Android Studio Documentation
 * Stack Overflow (God)
-* Youtube 
+* YouTube 
