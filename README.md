@@ -15,7 +15,7 @@ Android Device Running Android 4.0 or later
 ```
 
 ```
-5MB of available disk space
+6MB of available disk space
 ```
 
 ## How to use
